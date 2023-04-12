@@ -6,11 +6,19 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { FontAwesome } from "@expo/vector-icons";
 import Home from "./src/screens/Home.js";
-import NewTodoItem from "./src/screens/NewTodoItem.js";
+import NewTodo from "./src/screens/NewTodo.js";
+import { useFonts } from "expo-font";
 
 const Stack = createStackNavigator();
 
 export default function App() {
+  const [loaded] = useFonts({
+    Caveat: require("./assets/fonts/Caveat.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <NavigationContainer style={style.plusIcon}>
       <Stack.Navigator
@@ -19,6 +27,11 @@ export default function App() {
             backgroundColor: "#121212",
           },
           headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontFamily: "Caveat",
+            color: "#78838F",
+          },
         }}
         initialRouteName="Home"
       >
@@ -30,14 +43,14 @@ export default function App() {
               <FontAwesome
                 name="plus-square"
                 size={24}
-                color="#fff"
+                color="#78838F"
                 style={style.plusIcon}
-                onPress={() => navigation.navigate("New")}
+                onPress={() => navigation.navigate("NewTodo")}
               />
             ),
           })}
         />
-        <Stack.Screen name="New" component={NewTodoItem} />
+        <Stack.Screen name="NewTodo" component={NewTodo} />
       </Stack.Navigator>
     </NavigationContainer>
   );
