@@ -1,25 +1,91 @@
-import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import { FlatList, View, StyleSheet } from "react-native";
+import { Card } from "react-native-elements";
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+import { reach } from "yup";
+import { useFonts } from "expo-font";
 
-export default function Home() {
+export default function Home({ navigation }) {
+  const [loaded] = useFonts({
+    Caveat: require("../../assets/fonts/Caveat.ttf"),
+  });
+
+  const { getItem } = useAsyncStorage("todo");
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const keyExtractor = (item, index) => index.toString();
+
+  function getTodoList() {
+    getItem()
+      .then((todoJSON) => {
+        const todo = todoJSON ? JSON.parse(todoJSON) : [];
+        setItems(todo);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+  function renderCard({ item }) {
+    reach;
+    return (
+      <Card
+        containerStyle={{ backgroundColor: "#171717", borderColor: "#78838F" }}
+      >
+        <Card.Title
+          style={{ color: "#78838F", fontFamily: "Caveat", fontSize: 20 }}
+        >
+          Task: {item.task}
+        </Card.Title>
+        <Card.Divider style={{ color: "#78838F" }} />
+        <Card.Title style={styles.cardTitle}>
+          Priority: {item.priority}
+        </Card.Title>
+      </Card>
+    );
+  }
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("focus", getTodoList);
+
+    return unsubscribe;
+  }, []);
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome to Task Force!</Text>
+      <FlatList
+        refreshing={loading}
+        onRefresh={getTodoList}
+        style={styles.list}
+        data={items}
+        renderItem={renderCard}
+        keyExtractor={keyExtractor}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: -10,
-    backgroundColor: "#121212",
-    height: "100%",
-    color: "#f6f6f6",
+    flex: 1,
+    backgroundColor: "#171717",
+    alignItems: "center",
+    justifyContent: "center",
+    fontFamily: "Caveat",
   },
-  text: {
-    marginTop: 50,
-    color: "#f6f6f6",
+  cardContainer: {
+    textAlign: "left",
+    fontFamily: "Caveat",
+  },
+
+  list: {
+    width: "100%",
+    fontFamily: "Caveat",
+  },
+  cardTitle: {
+    textAlign: "left",
     fontSize: 20,
-    textAlign: "center",
+    color: "#78838F",
+    fontFamily: "Caveat",
   },
 });
