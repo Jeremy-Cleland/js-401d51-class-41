@@ -1,6 +1,6 @@
 # Task Force: Task Management Application
 
-Create a phone application using 1 native feature.
+Create a phone application using 1 native feature. 
 
 ---
 
@@ -44,6 +44,10 @@ Create a phone application using 1 native feature.
 
 ---
 
+## Mockup
+
+![SS3](./assets/SS3.PNG)
+
 ## Screen Shots
 
 ![SS1](./assets/SS1.PNG)
@@ -53,6 +57,13 @@ Create a phone application using 1 native feature.
 ![SS2](./assets/SS2.PNG)
 
 ---
+
+## UML
+
+![SS2](./assets/UML.PNG)
+
+---
+
 
 ### Milestones
 
@@ -77,16 +88,23 @@ Create a phone application using 1 native feature.
 
 - Clone repo
 - Set up an account at [expo](https://expo.io)
+- Download the Expo Go application on your cellular device
 - npm install
 - Run `npx expo start --tunnel`
-- Scan QR code with phone
+- Scan the QR code with phone 
 
 ### Resources
 
-- React Navigation: React Navigation manages screens, navigation between them, and history as a Stack
+- [React Navigation](https://reactnavigation.org/): React Navigation manages screens, navigation between them, and history as a Stack
+
 - [Formik](https://formik.org/): Simplies Form Submission
+
 - [Yup](github.com/jquense/yup): Yup is a schema builder for runtime value parsing and validation
+
 - [React Native Async Storage](https://react-native-async-storage.github.io): Data storage system for React Native.
+
 - [Expo](https://expo.io/): Expo is an open-source framework for apps that run natively on Android, iOS, and the web.
+
 - [React Native Elements](https://reactnativeelements.com/): A React Native framework for making cross-platform applications
-- [React Native UUID](https://github.com/eugenehp/react-native-uuid): React Native implementation of RFC4122 standard A Universally Unique IDentifier (UUID).
+
+- [React Native UUID](https://github.com/eugenehp/react-native-uuid): React Native implementation of RFC4122 standard A Universally Unique  IDentifier (UUID).
