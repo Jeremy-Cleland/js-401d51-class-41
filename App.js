@@ -45,12 +45,12 @@ export default function App() {
                 size={24}
                 color="#78838F"
                 style={style.plusIcon}
-                onPress={() => navigation.navigate("NewTodo")}
+                onPress={() => navigation.navigate("Add New Task")}
               />
             ),
           })}
         />
-        <Stack.Screen name="NewTodo" component={NewTodo} />
+        <Stack.Screen name="Add New Task" component={NewTodo} />
       </Stack.Navigator>
     </NavigationContainer>
   );
