@@ -41,6 +41,7 @@ Create a phone application using 1 native feature.
     - [ ] The user should be able to mark a todo item as complete.
     - [ ] The user should be able to unmark a todo item as complete.
     - [ ] The user should be able to see a list of all completed todo items.
+    - [x] The user should be able to delete the task
 
 ---
 

@@ -4,6 +4,7 @@ import { Card } from "react-native-elements";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import { reach } from "yup";
 import { useFonts } from "expo-font";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function Home({ navigation }) {
   const [loaded] = useFonts({
@@ -27,17 +28,27 @@ export default function Home({ navigation }) {
         console.error(err);
       });
   }
+  function removeItem(item) {
+    const newItems = items.filter((i) => i !== item);
+    setItems(newItems);
+  }
+
   function renderCard({ item }) {
     reach;
     return (
       <Card
         containerStyle={{ backgroundColor: "#171717", borderColor: "#78838F" }}
       >
-        <Card.Title
-          style={{ color: "#78838F", fontFamily: "Caveat", fontSize: 20 }}
-        >
-          Task: {item.task}
-        </Card.Title>
+        <FontAwesome
+          name="trash"
+          size={24}
+          color="#78838F"
+          style={styles.trashIcon}
+          onPress={() => {
+            removeItem(item);
+          }}
+        />
+        <Card.Title style={styles.cardTitle}>Task: {item.task}</Card.Title>
         <Card.Divider style={{ color: "#78838F" }} />
         <Card.Title style={styles.cardTitle}>
           Priority: {item.priority}
@@ -87,5 +98,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#78838F",
     fontFamily: "Caveat",
+  },
+  trashIcon: {
+    textAlign: "right",
+    paddingTop: 10,
+    marginBottom: -30,
   },
 });
