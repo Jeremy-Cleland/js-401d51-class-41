@@ -5,6 +5,7 @@ name = "javascript"
 
   [analyzers.meta]
   plugins = ["react"]
+  environment = ["jest"]
 
 [[transformers]]
 name = "prettier"
