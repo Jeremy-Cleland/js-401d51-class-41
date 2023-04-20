@@ -1,6 +1,6 @@
 # Task Force: Task Management Application
 
-Create a phone application using 1 native feature. 
+Create a phone application using 1 native feature.
 
 ---
 
@@ -65,7 +65,6 @@ Create a phone application using 1 native feature.
 
 ---
 
-
 ### Milestones
 
 - #### Milestone 1 - MVP (This Lab)
@@ -92,7 +91,7 @@ Create a phone application using 1 native feature.
 - Download the Expo Go application on your cellular device
 - npm install
 - Run `npx expo start --tunnel`
-- Scan the QR code with phone 
+- Scan the QR code with phone
 
 ### Resources
 
@@ -108,4 +107,4 @@ Create a phone application using 1 native feature.
 
 - [React Native Elements](https://reactnativeelements.com/): A React Native framework for making cross-platform applications
 
-- [React Native UUID](https://github.com/eugenehp/react-native-uuid): React Native implementation of RFC4122 standard A Universally Unique  IDentifier (UUID).
+- [React Native UUID](https://github.com/eugenehp/react-native-uuid): React Native implementation of RFC4122 standard A Universally Unique IDentifier (UUID).
