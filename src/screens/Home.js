@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   cardTitle: {
     textAlign: "left",
     fontSize: 20,
-    color: "#78838F",
+    color: "#fff",
     fontFamily: "Caveat",
   },
   trashIcon: {

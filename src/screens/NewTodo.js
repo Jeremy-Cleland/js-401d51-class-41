@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "Caveat",
-    color: "#78838F",
+    color: "#fff",
     padding: 30,
     fontSize: 25,
     textAlign: "center",
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 1,
     padding: 10,
-    color: "#78838F",
+    color: "#fff",
     backgroundColor: "#171717",
     borderRadius: 10,
     fontFamily: "Caveat",
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   },
   button: {
     fontFamily: "Caveat",
-    color: "#78838F",
+    color: "#fff",
     padding: 30,
     fontSize: 25,
     textAlign: "center",
