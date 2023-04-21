@@ -81,7 +81,7 @@ export default function NewTodo({ navigation }) {
                   style={styles.button}
                   title="Submit"
                   onPress={handleSubmit}
-                ></Button>
+                 />
               </View>
             )}
           </Formik>
